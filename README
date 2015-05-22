@@ -7,7 +7,7 @@ Removed the do loop and zenity from reddit tracker.
 
 Usage:
 =====
-Add threads to be followed are to be added in threads.txt 
+Add threads to be followed in threads.txt 
 
 echo "some_reddit_thread" >> ~/.scripts/threads.txt
 
