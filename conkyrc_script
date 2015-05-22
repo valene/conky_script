@@ -91,3 +91,6 @@ $hr
 $hr
 ${color white}$mpd_status
 ${scroll 16 $mpd_title - $mpd_artist}
+${execpi 15 ~/.scripts/reddittracker.sh `tail -n 3 ~/.scripts/threads.txt | head -n 1`}
+${execpi 15 ~/.scripts/reddittracker.sh `tail -n 2 ~/.scripts/threads.txt | head -n 1`}
+${execpi 15 ~/.scripts/reddittracker.sh `tail -n 1 ~/.scripts/threads.txt`}

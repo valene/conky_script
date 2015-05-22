@@ -1,3 +1,23 @@
 My conky configuration scripts
 More will be added as I go.
 
+Added Reddit tracking script of Alicia.
+All credits go to alicia@ion.nu.
+Removed the do loop and zenity from reddit tracker.
+
+Usage:
+=====
+Add threads to be followed are to be added in threads.txt 
+
+echo "some_reddit_thread" >> ~/.scripts/threads.txt
+
+
+place reddittracker.sh and threads.txt in .scripts folder of homedir.
+
+
+The code only follows the latest three added threads. 
+Make sure there are a minimum of three threads in threads.txt 
+or
+edit the conkyrc appropriately.
+
+
