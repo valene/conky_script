@@ -20,4 +20,11 @@ Make sure there are a minimum of three threads in threads.txt
 or
 edit the conkyrc appropriately.
 
+25.05.15: - Added a bash script to generate conkyrc
+=========
+-support for connected interfaces and generates conkyrc accordingly
+-support for cpu cores, checks if lm_sensors is available
+	-if sensors is available , parses output of sensors
+	-if not try to find temp$i_input and read the temperature.
+
 
