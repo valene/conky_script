@@ -27,4 +27,9 @@ edit the conkyrc appropriately.
 	-if sensors is available , parses output of sensors
 	-if not try to find temp$i_input and read the temperature.
 
-
+26.05.15: - Added support for reddit tracker script of alicia@ion.nu
+=========
+-reddittracker.sh && threads.txt are placed in ~/.scripts
+-append threads to threads.txt , cat "some_reddit_thread" >> thread.txt
+-if redditracker.sh and threads.txt are in some other location; then
+	comment the function and edit .conkyrc for the location.

@@ -54,6 +54,12 @@ cpustat () {
   sensors -v foo > /dev/null 2>&1 && use_sens || use_sniffing 
 }
 
+check_reddit_script () {
+  [[ -d "/home/$USER/.scripts" ]] || mkdir ~/.scripts
+  [[ -f "/home/$USER/.scripts/reddittracker.sh" ]] || echo "copy reddittracker script to ~/.scripts directory"
+  [[ -f "/home/$USER/.scripts/threads.txt" ]] || (cd /home/$USER/.scripts && touch threads.txt && echo "reddits threads here" >> threads.txt)
+}
+
 #Define Colors
 cgy='${color grey}'
 cbl='${color black}'
@@ -129,3 +135,9 @@ echo '$hr' >> $outfile
 echo '$hr' >> $outfile
 echo "$cw\$mpd_status" >> $outfile
 echo '${scroll 16 $mpd_title - $mpd_artist}' >> $outfile
+#reddit score tracker starts
+echo '$hr' >> $outfile
+check_reddit_Sscript &&  echo "scripts are in place" # or, (comment this line && edit conkyrc file.) 
+for i in `seq 1 3` ; do
+echo "\${scroll 16 \` cat ~/.scripts/threads.txt | tail -n $i \` | }\${alignr}{execi 30 ~/.scripts/reddittracker.sh \` cat ~/.scripts/threads.txt | tail -n $i \` } "  >> $outfile  
+done
